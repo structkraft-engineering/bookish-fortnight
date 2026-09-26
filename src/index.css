@@ -1,26 +1,381 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap');
+
 @import "tailwindcss";
 
 @theme {
-  /* Navy + Gold Palette */
   --color-navy: #0B1B3D;
   --color-gold: #F5B041;
   --color-steel: #607D8B;
-  
-  /* Fonts */
-  --font-heading: 'Montserrat', sans-serif;
-  --font-sans: 'Open Sans', sans-serif;
+  --color-carbon: #1A1A1A;
+  --color-white: #FFFFFF;
+
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+}
+
+:root {
+  font-family: "Open Sans", sans-serif;
+  color: #1A1A1A;
+  background: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-sans);
-  background-color: #FFFFFF;
+  margin: 0;
+  min-width: 320px;
+  background: #ffffff;
   color: #1A1A1A;
+  font-family: "Open Sans", sans-serif;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: "Open Sans", sans-serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: #F5B041;
+  color: #0B1B3D;
+}
+
+/* -------------------------------------------------------
+   TYPOGRAPHY
+------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #0B1B3D;
+}
+
+.heading-uppercase {
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.05;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #0B1B3D;
+  text-align: center;
+}
+
+.section-subtitle {
+  max-width: 760px;
+  margin: 0 auto;
+  color: #607D8B;
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* -------------------------------------------------------
+   GLOBAL LAYOUT
+------------------------------------------------------- */
+
+.section {
+  width: 100%;
+  padding: 5rem 2rem;
+}
+
+.section-container {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.section-heading {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.section-heading h2 {
   margin: 0;
 }
 
-h1, h2, h3, h4 {
-  font-family: var(--font-heading);
+.gold-line {
+  width: 6rem;
+  height: 0.25rem;
+  margin: 1.25rem auto 0;
+  background: #F5B041;
+}
+
+/* -------------------------------------------------------
+   BUTTONS
+------------------------------------------------------- */
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1rem 2rem;
+  border: 2px solid #F5B041;
+  border-radius: 0.35rem;
+  background: #F5B041;
+  color: #0B1B3D;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
   font-weight: 800;
   text-transform: uppercase;
+  letter-spacing: 0.03em;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease,
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.btn-gold:hover {
+  background: #ffffff;
+  color: #0B1B3D;
+  border-color: #F5B041;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(11, 27, 61, 0.12);
+}
+
+.btn-navy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1rem 2rem;
+  border: 2px solid #0B1B3D;
+  border-radius: 0.35rem;
+  background: #0B1B3D;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    transform 200ms ease;
+}
+
+.btn-navy:hover {
+  background: #F5B041;
+  border-color: #F5B041;
+  color: #0B1B3D;
+  transform: translateY(-2px);
+}
+
+/* -------------------------------------------------------
+   CARDS
+------------------------------------------------------- */
+
+.engineering-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-top: 4px solid #0B1B3D;
+  transition:
+    transform 250ms ease,
+    border-color 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.engineering-card:hover {
+  border-top-color: #F5B041;
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(11, 27, 61, 0.1);
+}
+
+/* -------------------------------------------------------
+   NAVBAR
+------------------------------------------------------- */
+
+.navbar-glass {
+  background: rgba(11, 27, 61, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* -------------------------------------------------------
+   HERO
+------------------------------------------------------- */
+
+.hero-overlay {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(11, 27, 61, 0.96) 0%,
+      rgba(11, 27, 61, 0.86) 42%,
+      rgba(11, 27, 61, 0.35) 75%,
+      rgba(11, 27, 61, 0.12) 100%
+    );
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(
+      rgba(245, 176, 65, 0.07) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(245, 176, 65, 0.07) 1px,
+      transparent 1px
+    );
+  background-size: 40px 40px;
+}
+
+/* -------------------------------------------------------
+   ENGINEERING DETAILS
+------------------------------------------------------- */
+
+.blueprint-grid {
+  background-color: #0B1B3D;
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    );
+  background-size: 32px 32px;
+}
+
+.gold-accent {
+  color: #F5B041;
+}
+
+.steel-text {
+  color: #607D8B;
+}
+
+.navy-bg {
+  background: #0B1B3D;
+}
+
+.gold-bg {
+  background: #F5B041;
+}
+
+.carbon-text {
+  color: #1A1A1A;
+}
+
+/* -------------------------------------------------------
+   FORMS
+------------------------------------------------------- */
+
+.form-input {
+  width: 100%;
+  border: 1px solid #d7dde1;
+  background: #ffffff;
+  padding: 0.9rem 1rem;
+  color: #1A1A1A;
+  outline: none;
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.form-input:focus {
+  border-color: #F5B041;
+  box-shadow: 0 0 0 3px rgba(245, 176, 65, 0.15);
+}
+
+.form-input::placeholder {
+  color: #90a0a8;
+}
+
+/* -------------------------------------------------------
+   SCROLLBAR
+------------------------------------------------------- */
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f3f4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #607D8B;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0B1B3D;
+}
+
+/* -------------------------------------------------------
+   MOBILE
+------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 1.25rem;
+  }
+
+  .section-heading {
+    margin-bottom: 3rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .btn-gold,
+  .btn-navy {
+    width: 100%;
+  }
+}
+
+/* -------------------------------------------------------
+   ACCESSIBILITY
+------------------------------------------------------- */
+
+:focus-visible {
+  outline: 3px solid #F5B041;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
