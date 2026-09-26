@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import {
   FiArrowRight,
-  FiCheckCircle,
   FiClipboard,
   FiLayers,
   FiShield,

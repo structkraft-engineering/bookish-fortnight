@@ -1,4 +1,5 @@
-import { FormEvent, useState } from 'react'
+import { useState } from 'react'
+import type { FormEvent } from 'react'
 import {
   FiArrowRight,
   FiClock,
@@ -78,9 +79,11 @@ export default function Contact() {
                     </h3>
 
                     <p className="mt-2 text-sm leading-6 text-steel">
-                      Mumbai,
+                      01, Govind Nagar Building,
                       <br />
-                      Maharashtra, India
+                      Near IOB Bank, Mira Road,
+                      <br />
+                      Mumbai – 401107
                     </p>
                   </div>
                 </div>
@@ -96,10 +99,17 @@ export default function Contact() {
                     </h3>
 
                     <a
-                      href="tel:+912240000000"
+                      href="tel:+919892021246"
                       className="mt-2 block text-sm text-steel transition hover:text-gold"
                     >
-                      +91 22 4000 0000
+                      +91 98920 21246
+                    </a>
+
+                    <a
+                      href="tel:+919702124266"
+                      className="mt-1 block text-sm text-steel transition hover:text-gold"
+                    >
+                      +91 97021 24266
                     </a>
                   </div>
                 </div>
@@ -115,10 +125,10 @@ export default function Contact() {
                     </h3>
 
                     <a
-                      href="mailto:info@structkraft.com"
+                      href="mailto:shassociates989@gmail.com"
                       className="mt-2 block text-sm text-steel transition hover:text-gold"
                     >
-                      info@structkraft.com
+                      shassociates989@gmail.com
                     </a>
                   </div>
                 </div>
@@ -166,9 +176,8 @@ export default function Contact() {
                   </h3>
 
                   <p className="mt-3 leading-7 text-steel">
-                    Thank you. Your enquiry has been captured in this demo
-                    interface. Connect the form to your preferred email or
-                    backend service to receive submissions.
+                    Thank you. Your enquiry has been captured. Our team will
+                    get in touch with you shortly.
                   </p>
 
                   <button
@@ -299,10 +308,7 @@ export default function Contact() {
                     />
                   </div>
 
-                  <button
-                    type="submit"
-                    className="btn-gold w-full"
-                  >
+                  <button type="submit" className="btn-gold w-full">
                     Send Enquiry
                     <FiArrowRight />
                   </button>
@@ -328,7 +334,7 @@ export default function Contact() {
                     </div>
 
                     <p className="mt-6 font-heading text-xl font-extrabold uppercase text-white">
-                      Mumbai
+                      Mira Road, Mumbai
                     </p>
 
                     <p className="mt-2 text-sm text-white/50">
@@ -354,7 +360,7 @@ export default function Contact() {
                 </p>
 
                 <a
-                  href="mailto:info@structkraft.com"
+                  href="mailto:shassociates989@gmail.com"
                   className="mt-7 inline-flex items-center gap-2 font-heading text-sm font-extrabold uppercase text-gold hover:text-white"
                 >
                   Email Our Team
